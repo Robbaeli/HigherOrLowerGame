@@ -10,6 +10,7 @@ Play through all 52 cards and try to get the highest score!
  Screenshots
 
  From left description
+ 
  -Starting  screen (choose play or how to play)
  - Play screen with share results as copied text
  - How to play screen
