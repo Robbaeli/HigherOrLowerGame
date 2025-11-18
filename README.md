@@ -13,6 +13,8 @@ Play through all 52 cards and try to get the highest score!
  -Starting  screen (choose play or how to play)
  - Play screen with share results as copied text
  - How to play screen
+
+   
  
 
 <img width="1622" height="1076" alt="image" src="https://github.com/user-attachments/assets/1b308349-131b-4cc4-b8a5-a4a4452a7558" />
