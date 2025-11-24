@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_dark"
     android:padding="24dp">
 
-    <!-- Score och Cards left -->
     <TextView
         android:id="@+id/tvScore"
         android:layout_width="wrap_content"
@@ -29,7 +26,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Titel -->
     <TextView
         android:id="@+id/tvGameTitle"
         android:layout_width="wrap_content"
@@ -40,12 +36,11 @@
         android:textStyle="bold"
         android:gravity="center"
         android:lineSpacingExtra="-8dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Kortet -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="200dp"
@@ -62,68 +57,57 @@
             android:id="@+id/tvCard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:text="4♥"
-            android:textColor="#D32F2F"
             android:textSize="80sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#D32F2F" />
     </androidx.cardview.widget.CardView>
 
-    <!-- Higher & Lower knappar -->
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/btnHigher"
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:text="Higher"
         android:textSize="22sp"
         android:textColor="@color/white"
+        android:textAllCaps="false"
         android:backgroundTint="@color/button_green"
-        app:cornerRadius="40dp"
         app:layout_constraintTop_toBottomOf="@id/cardView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btnLower"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="12dp" />
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/btnLower"
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:text="Lower"
         android:textSize="22sp"
         android:textColor="@color/white"
+        android:textAllCaps="false"
         android:backgroundTint="@color/button_red"
-        app:cornerRadius="40dp"
         app:layout_constraintTop_toBottomOf="@id/cardView"
         app:layout_constraintStart_toEndOf="@id/btnHigher"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="60dp"
         android:layout_marginStart="12dp" />
 
-    <!-- Menu och Share längst ner -->
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/btnMenu"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="596dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginBottom="656dp"
+        android:drawablePadding="8dp"
+        android:drawableTint="@color/white"
         android:text="Menu"
         android:textColor="@color/white"
-        app:iconTint="@color/white"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageButton
-        android:id="@+id/btnShare"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:tint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/btnMenu"
-        app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
