@@ -19,6 +19,8 @@ class GameActivity : AppCompatActivity() {
     private lateinit var btnMenu: Button
 
 
+
+
     private  val deck = mutableListOf<String>()
     private val currentCardValue = 0
     private val score = 0

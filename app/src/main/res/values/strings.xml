@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">HigherOrLowerGame</string>
+    <string name="app_name">Högre eller Lägre</string>
+    <string name="score">Poäng: %1$d</string>
+    <string name="higher">Högre</string>
+    <string name="lower">Lägre</string>
+    <string name="show_results">Visa resultat</string>
+    <string name="your_score">Ditt resultat: %1$d</string>
+    <string name="share_button">Dela resultat</string>
+    <string name="share_message">Jag fick %1$d poäng i Högre eller Lägre!</string>
 </resources>
