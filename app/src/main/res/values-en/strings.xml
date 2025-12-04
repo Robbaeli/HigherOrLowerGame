@@ -1,10 +1,12 @@
 <resources>
-    <string name="app_name">Higher or Lower</string>
-    <string name="score">Score: %1$d</string>
-    <string name="higher">Higher</string>
-    <string name="lower">Lower</string>
-    <string name="show_results">Show results</string>
-    <string name="your_score">Your score: %1$d</string>
-    <string name="share_button">Share result</string>
-    <string name="share_message">I got %1$d points in Higher or Lower!</string>
+
+   <string name="rules">
+        You see a card on the screen\n
+        Guess if next card is higher or lower\n
+        The next card is reveled\n
+        Correct = 1 point\n
+        Wrong = 0 point\n
+        Game ends when deck finished\n
+    </string>
+
 </resources>

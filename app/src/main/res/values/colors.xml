@@ -7,8 +7,8 @@
     <color name="teal_700">#018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
     <color name="game_bg">#1E1E1E</color>
     <color name="btn_green">#689F38</color>
     <color name="btn_red">#B71C1C</color>
+    <color name="Lightgreeb">#9DCB65</color>
 </resources>
