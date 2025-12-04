@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#6200EE</color>
+    <color name="purple_700">#3700B3</color>
+    <color name="teal_200">#03DAC5</color>
+    <color name="teal_700">#018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="background_dark">#FF1E1E1E</color>
-    <color name="card_background">#FFFFFFFF</color>
-    <color name="button_green">#FF4CAF50</color>
-    <color name="button_red">#FFF44336</color>
-    <color name="text_light">#FFFFFFFF</color>
+
+    <color name="game_bg">#1E1E1E</color>
+    <color name="btn_green">#689F38</color>
+    <color name="btn_red">#B71C1C</color>
 </resources>
-
-
