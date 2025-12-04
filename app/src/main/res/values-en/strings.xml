@@ -9,4 +9,8 @@
         Game ends when deck finished\n
     </string>
 
+    <string name="app_name">HigherOrLower</string>
+
+
+
 </resources>

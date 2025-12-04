@@ -11,10 +11,8 @@
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="46dp"
-        android:layout_marginBottom="314dp"
+        android:layout_marginTop="57dp"
         android:src="@drawable/higher_or_lower_logo"
-        app:layout_constraintBottom_toTopOf="@+id/rules"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,29 +21,28 @@
         android:id="@+id/btnStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingVertical="16dp"
-        android:paddingHorizontal="32dp"
+        android:layout_marginTop="123dp"
         android:backgroundTint="@color/btn_green"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="16dp"
         android:text="Start Game"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/rules"
-        app:layout_constraintVertical_bias="0" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
     <Button
         android:id="@+id/rules"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingVertical="16dp"
-        android:paddingHorizontal="32dp"
+        android:layout_marginTop="22dp"
         android:backgroundTint="@color/Lightgreeb"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="16dp"
         android:text="Rules"
-        app:layout_constraintTop_toBottomOf="@+id/btnStart"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnStart" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
