@@ -1,5 +1,6 @@
 package com.robbaflow.higherorlowergame
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
@@ -9,17 +10,10 @@ import androidx.appcompat.app.AppCompatActivity
 
 class GameActivity : AppCompatActivity() {
 
-    // Variabler för att minnas spelet
-    // En lista som håller alla kort i leken
     var deck = mutableListOf<Card>()
-
-    // Kortet som syns på skärmen just nu
     var currentCard: Card? = null
-
-    // Spelarens poäng
     var score = 0
 
-    // Variabler för UI
     lateinit var tvScore: TextView
     lateinit var tvCardSymbol: TextView
     lateinit var tvCardValue: TextView
@@ -32,80 +26,73 @@ class GameActivity : AppCompatActivity() {
         tvScore = findViewById(R.id.tvScore)
         tvCardSymbol = findViewById(R.id.tvCardSymbol)
         tvCardValue = findViewById(R.id.tvCardValue)
+
         val btnHigher = findViewById<Button>(R.id.btnHigher)
         val btnLower = findViewById<Button>(R.id.btnLower)
+        val btnShare = findViewById<Button>(R.id.btnShare)   // ⬅ SHARE-knapp
 
         // Starta spelet
         setupNewGame()
 
-        // klicka på knapp higher
         btnHigher.setOnClickListener {
-            checkGuess(true) // true betyder "Jag tror högre"
+            checkGuess(true)
         }
 
-        // klicka på knapp lower
-
         btnLower.setOnClickListener {
-            checkGuess(false) // false betyder "Jag tror lägre"
+            checkGuess(false)
+        }
+
+        //SHARE KNAPPENS FUNKTION
+        btnShare.setOnClickListener {
+            val shareText = "Jag fick $score poäng i Higher or Lower! Kan du slå mig? 😄"
+
+            val shareIntent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, shareText)
+                type = "text/plain"
+            }
+
+            startActivity(Intent.createChooser(shareIntent, "Dela via"))
         }
     }
 
-    // Funktion: Skapa kortlek och nollställ poäng
     fun setupNewGame() {
         score = 0
-        deck.clear() // Töm listan efter vi gått igenom hela
+        deck.clear()
 
-        // Skapa 52 kort med loopar
         val suits = listOf("♥", "♦", "♣", "♠")
 
         for (suit in suits) {
-            // Bestäm om kortet är rött eller svart
             val isRed = (suit == "♥" || suit == "♦")
-
-            // Loopa värden 2 till 14
             for (value in 2..14) {
                 deck.add(Card(value, suit, isRed))
             }
         }
 
-        deck.shuffle() // Blanda kortleken slumpmässigt
+        deck.shuffle()
 
-        // Ta första kortet och visa det
         if (deck.isNotEmpty()) {
             currentCard = deck[0]
-            deck.removeAt(0) // Ta bort det från leken
-            updateUI() // Visa på skärmen
+            deck.removeAt(0)
+            updateUI()
         }
     }
 
-    // Funktion: Kollar om gissningen var rätt
     fun checkGuess(guessedHigher: Boolean) {
-        // Om kortleken är slut, starta om
         if (deck.isEmpty()) {
             Toast.makeText(this, "Game Over! Starting new game.", Toast.LENGTH_LONG).show()
             setupNewGame()
             return
         }
 
-        // Ta nästa kort i listan
         val nextCard = deck[0]
-        deck.removeAt(0) // Ta bort det så det inte kommer igen
+        deck.removeAt(0)
 
-        // Jämför värdena
         val oldValue = currentCard!!.value
         val newValue = nextCard.value
 
-        var isCorrect = false
+        val isCorrect = if (guessedHigher) newValue >= oldValue else newValue <= oldValue
 
-        if (guessedHigher) {
-            // Om man gissade högre, måste nya vara >= gamla
-            if (newValue >= oldValue) isCorrect = true
-        } else {
-            // Om man gissade lägre, måste nya vara <= gamla
-            if (newValue <= oldValue) isCorrect = true
-        }
-
-        // Ge poäng eller inte
         if (isCorrect) {
             score++
             Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show()
@@ -113,21 +100,16 @@ class GameActivity : AppCompatActivity() {
             Toast.makeText(this, "Wrong!", Toast.LENGTH_SHORT).show()
         }
 
-        // Byt så att nästa kort blir det nuvarande
         currentCard = nextCard
         updateUI()
     }
 
-    // Funktion: Uppdaterar texten på skärmen
     fun updateUI() {
         tvScore.text = "Score: $score"
 
-        // Visa rätt symbol och värde
-        // !! betyder att vi lovar Kotlin att currentCard inte är null här
         tvCardSymbol.text = currentCard!!.suit
         tvCardValue.text = currentCard!!.getDisplayValue()
 
-        // Ändra färg till Röd eller Svart
         if (currentCard!!.isRed) {
             tvCardSymbol.setTextColor(Color.RED)
             tvCardValue.setTextColor(Color.RED)

@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Hitta knapparna i XML (Mycket bra!)
+        // Hitta knapparna i XML
         val btnStart = findViewById<Button>(R.id.btnStart)
         val btnRules = findViewById<Button>(R.id.rules) // (Bra att du använder R.id.)
 
@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnRules.setOnClickListener {
-            // FIXAD RAD: Ett Intent som pekar på RulesActivity-klassen.
             val intent = Intent(this, RulesActivity::class.java)
             startActivity(intent)
         }
